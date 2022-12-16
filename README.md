@@ -7,12 +7,13 @@ If you have any questions, please reach out to me at [jimig@nmsu.edu](mailto:jim
 
 ### Included Files
 - `apogeeCombinedSF.dat` - the pre-computed raw (2D) selection function for APOGEE DR17 computed on *August 23, 2022*.
+- - Unfortuneately the selection function is TOO LARGE (4 GB) to host on github. Until I find a better location, you can download it [at this google drive](https://drive.google.com/drive/folders/1n-Twev-qElrCmVsKu5_OUMyS3j9_d0nV?usp=share_link).
 - - **There is a minor known issue for 14 (out of 1937) fields in this selection function. A fix coming soon (by Dec 21)!**
 - `TUTORIAL1.ipynb` - a jupyter notebook tutorial for how to work with the raw selection function.
+- `TUTORIAL2.ipynb` - a jupyter notebook tutorial for how to calculate the effective (3D) selection function from the raw selection function.
 
 Additional Files Coming Soon: 
 
-- `TUTORIAL2.ipynb` (coming soon!) - a jupyter notebook tutorial for how to calculate the effective (3D) selection function for your project.
 - `effective_selfunc.dat` (coming soon!) - the pre-computed effective selection function used in Imig et al. 2023 (in prep)
 
 
