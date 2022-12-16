@@ -6,7 +6,7 @@ If you have any questions, please reach out to me at [jimig@nmsu.edu](mailto:jim
 
 
 ### Included Files
-- `apogeeCombinedSF.dat` - the pre-computed raw (2D) selection function for APOGEE DR17 computed on *Decemer 16, 2022*.
+- `apogeeCombinedSF.dat` - the pre-computed raw (2D) selection function for APOGEE DR17 computed on *December 16, 2022*.
 - - Unfortuneately the selection function is TOO LARGE (4 GB) to host on github. Until I find a better location, you can download it [at this google drive](https://drive.google.com/drive/folders/1n-Twev-qElrCmVsKu5_OUMyS3j9_d0nV?usp=share_link).
 - - **There is a minor known issue for 14 (out of 1937) fields in this selection function. A fix coming soon!!**
 - `TUTORIAL1.ipynb` - a jupyter notebook tutorial for how to work with the raw selection function.
