@@ -6,7 +6,7 @@ If you have any questions, please reach out to me at [jimig@nmsu.edu](mailto:jim
 
 
 ### Included Files
-- `apogeeCombinedSF.dat` - the pre-computed raw (2D) selection function for APOGEE DR17 computed on *Decemer 15, 2022*.
+- `apogeeCombinedSF.dat` - the pre-computed raw (2D) selection function for APOGEE DR17 computed on *Decemer 16, 2022*.
 - - Unfortuneately the selection function is TOO LARGE (4 GB) to host on github. Until I find a better location, you can download it [at this google drive](https://drive.google.com/drive/folders/1n-Twev-qElrCmVsKu5_OUMyS3j9_d0nV?usp=share_link).
 - - **There is a minor known issue for 14 (out of 1937) fields in this selection function. A fix coming soon!!**
 - `TUTORIAL1.ipynb` - a jupyter notebook tutorial for how to work with the raw selection function.
@@ -19,7 +19,7 @@ Additional Files Coming Soon:
 
 ### Important Caveats
 - **This selection function is only valid for APOGEE main survey targets**, stars that were targeted randomly from 2MASS. You can easily select main survey targets in the APOGEE `allStar` file using the criterion `allStar['EXTRATARG']==0`. Do not use this selection function for non-main survey targets, as it will be an underestimate of the true selection fraction for those stars.
-- Some of the halo stars were not targeted on 2MASS photometry, but on additional Washington+DDO51 photometry [(more detail found here)](https://www.sdss4.org/dr17/irspec/targets/). Therefore, the 2MASS-based selection function here may not be accurate for all halo fields. If you plan to use this selection function to study the Galactic halo, be cautious of this! In most cases, this results in an overestimate of the selection fraction for halo fields, in some rare cases even exceeding 100%. Relevant stars are flagged with the `APOGEE_TARGET1` targeting bits `APOGEE2_WASH_GIANT` or `APOGEE2_WASH_DWARF` ([documented more here](https://www.sdss4.org/dr17/irspec/apogee-bitmasks/#APOGEE2_TARGET1:APOGEE2targetingbitmask(1of3))) to easily identify the affected fields.
+- Some of the halo stars were not targeted on 2MASS photometry, but on additional Washington+DDO51 photometry [(more detail found here)](https://www.sdss4.org/dr17/irspec/targets/). Therefore, the 2MASS-based selection function here may not be accurate for all halo fields. If you plan to use this selection function to study the Galactic halo, be cautious of this! In most cases, this results in an overestimate of the selection fraction for halo fields, in a few cases even exceeding 100%. Relevant stars are flagged with the `APOGEE_TARGET1` targeting bits `APOGEE2_WASH_GIANT` or `APOGEE2_WASH_DWARF` ([documented more here](https://www.sdss4.org/dr17/irspec/apogee-bitmasks/#APOGEE2_TARGET1:APOGEE2targetingbitmask(1of3))) to easily identify the affected fields.
 
 
 ### How to Cite
@@ -37,13 +37,13 @@ The **raw selection function**, which I like to think of as the 2D selection fun
 
 # Effective Selection Function
 
-The **effective (or 3D) selection function** is the ratio of the **observed number of stars** divided by the **intrinsic number of stars in the Milky Way** as a function of 3D Heliocentric position. This includes the effects of the raw selection function, with some additional ingredients of distances, isochrones (to assume some intrinsic distribution on the HR diagram) and a 3D Milky Way dust map. **This is a more complex application of the selection function and will largely depend on your planned science case.**
+The **effective (or 3D) selection function** is the ratio of the **observed number of stars in APOGEE** divided by the **intrinsic number of stars in the Milky Way** as a function of 3D Heliocentric position. This includes the effects of the raw selection function, with some additional ingredients of distances, isochrones (to assume some intrinsic distribution on the HR diagram) and a 3D Milky Way dust map. **This is a more complex application of the selection function and will largely depend on your planned science case.** 
 
-Under construction - more here coming soon!
+For example, you may want to split up the effective selection for different metallicities (as done in [Mackereth & Bovy 2020](https://ui.adsabs.harvard.edu/abs/2020MNRAS.492.3631M/abstract)), or by both metallicity and stellar ages (as in [Mackereth et al. 2017](https://ui.adsabs.harvard.edu/abs/2017MNRAS.471.3057M/abstract)). You may want smaller or larger sized bins than adopted by previous work, or a different range of distances sampled. Depending on how you define your data sample in APOGEE (cuts in surface gravity, kinematics, etc.), this should also be reflected in the effective selection function for best results.  
 
 ![Effective Selection Function](https://i.imgur.com/fhIBdqG.png)
 
-*Figure 2: The effective selection function for APOGEE, showing the selection fraction along different lines-of-sight. Generally, the selection fraction is larger close to the Sun, and decreases with distance.*
+*Figure 2: The effective selection function for APOGEE, showing the selection fraction along different lines of sight. Generally, the selection fraction is larger close to the Sun, and decreases with distance.*
 
 # Other Useful Resources
 
