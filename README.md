@@ -6,11 +6,10 @@ If you have any questions, please reach out to me at [jimig@nmsu.edu](mailto:jim
 
 
 ### Included Files
-- `apogeeCombinedSF.dat` - the pre-computed raw (2D) selection function for APOGEE DR17 computed on *December 16, 2022*.
-- - Unfortuneately the selection function is TOO LARGE (4 GB) to host on github. Until I find a better location, you can download it [at this google drive](https://drive.google.com/drive/folders/1n-Twev-qElrCmVsKu5_OUMyS3j9_d0nV?usp=share_link).
-- - **There is a minor known issue for 14 (out of 1937) fields in this selection function. A fix coming soon!!**
+- `apogeeCombinedSF.dat.zip` - the pre-computed raw (2D) selection function for APOGEE DR17 computed on *December 16, 2022*.
 - `TUTORIAL1.ipynb` - a jupyter notebook tutorial for how to work with the raw selection function.
 - `TUTORIAL2.ipynb` - a jupyter notebook tutorial for how to calculate the effective (3D) selection function from the raw selection function.
+- `JHK_isochrones.txt` - sample [PARSEC isochrones](http://stev.oapd.inaf.it/cgi-bin/cmd) used in `TUTORIAL2`
 
 Additional Files Coming Soon: 
 
@@ -20,6 +19,12 @@ Additional Files Coming Soon:
 ### Important Caveats
 - **This selection function is only valid for APOGEE main survey targets**, stars that were targeted randomly from 2MASS. You can easily select main survey targets in the APOGEE `allStar` file using the criterion `allStar['EXTRATARG']==0`. Do not use this selection function for non-main survey targets, as it will be an underestimate of the true selection fraction for those stars.
 - Some of the halo stars were not targeted on 2MASS photometry, but on additional Washington+DDO51 photometry [(more detail found here)](https://www.sdss4.org/dr17/irspec/targets/). Therefore, the 2MASS-based selection function here may not be accurate for all halo fields. If you plan to use this selection function to study the Galactic halo, be cautious of this! In most cases, this results in an overestimate of the selection fraction for halo fields, in a few cases even exceeding 100%. Relevant stars are flagged with the `APOGEE_TARGET1` targeting bits `APOGEE2_WASH_GIANT` or `APOGEE2_WASH_DWARF` ([documented more here](https://www.sdss4.org/dr17/irspec/apogee-bitmasks/#APOGEE2_TARGET1:APOGEE2targetingbitmask(1of3))) to easily identify the affected fields.
+- There is a minor known issue for 14 (out of 1937) fields in the current selection function where the color limit returns NaN. A fix coming soon!!
+
+
+
+### Dependencies
+You'll need an installation of the [`apogee`](https://github.com/astrojimig/apogee/tree/dr17-selection) and [`mwdust`](https://github.com/jobovy/mwdust) packages for this, along with some standard python packages (`numpy`, `astropy`, `matplotlib`, etc.)
 
 
 ### How to Cite
